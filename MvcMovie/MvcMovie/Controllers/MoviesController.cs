@@ -28,13 +28,13 @@ namespace MvcMovie.Controllers
         // GET: Movies/ShowSearchForm
         public async Task<IActionResult> ShowSearchForm()
         {
-            return View(await _context.Movie.ToListAsync());
+            return View();
         }
 
         // POST: Movies/ShowSearchResults
-        public async Task<IActionResult> ShowSearchResults()
+        public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
         {
-            return View(await _context.Movie.ToListAsync());
+            return View("Index",await _context.Movie.Where(j =>j.Title.Contains(SearchPhrase)).ToListAsync());
         }
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
