@@ -17,7 +17,7 @@ namespace MvcMovie.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "This application will show a list of movies, you can add, delete or edit the list.";
 
             return View();
         }
